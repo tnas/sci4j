@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <artifactId>sci4j</artifactId>
+    <groupId>io.github.tnas</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <groupId>io.github.tnas.sci4j</groupId>
+  <artifactId>colt</artifactId>
+
+  <name>colt</name>
+  <url>https://dst.lbl.gov/ACSSoftware/colt/</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>21</maven.compiler.release>
+  </properties>
+
+  <dependencies>
+  	<dependency>
+  		<groupId>EDU.oswego.cs.dl.util</groupId>
+        <artifactId>concurrent</artifactId>
+        <version>1.2.0</version>
+  	</dependency>
+  </dependencies>
+  
+  <build>
+  	<plugins>
+	  	<plugin>
+		    <artifactId>maven-install-plugin</artifactId>
+		    <executions>
+		        <execution>
+		            <phase>initialize</phase>
+		            <goals>
+		                <goal>install-file</goal>
+		            </goals>
+		            <configuration>
+		                <file>lib/concurrent.jar</file>
+		                <groupId>EDU.oswego.cs.dl.util</groupId>
+		                <artifactId>concurrent</artifactId>
+		                <version>1.2.0</version>
+		                <packaging>jar</packaging>
+		            </configuration>
+		        </execution>
+		    </executions>
+		</plugin>
+  	</plugins>
+  </build>
+  	
+</project>
